@@ -12,7 +12,7 @@ standardised interface to interact with the token. It is setup in such a way
 that modifying the balance for a given address requires a valid signature of a
 public key for that address.
 
-The `AET` tokens function as IOUs for the the initial distribution of coins for
+The `AE` tokens function as IOUs for the the initial distribution of coins for
 the Aeternity blockchain and they will be usable until `Mon Sep 02 19:56:09 2019 UTC`
 after which the smart contract should refuse any token transfers.
 
@@ -25,6 +25,8 @@ Given that the ERC20 token is transferable until late 2019, we are going to
 in order to be able to come up with an initial distribution, since we do not
 want to wait until the tokens are no longer transferable.
 
+(***TODO***: find out how many smart contracts are managing AE tokens currently
+and how many of the initial distribution never moved)
 
 ## Snapshot
 
@@ -130,7 +132,7 @@ and a proof that the tokens were burned on the Ethereum chain. A proof of burn
 could be a proof that the above contract's state contains a claim entry.
 
 
-## Icentives
+## Incentives
 
 It is important to note, that users will need to withdraw their tokens from
 (centralised) exchanges in either case if they do not want to have to rely on
@@ -144,9 +146,10 @@ the native coin is traded at much lower value than the ERC20 token, then the
 incentive for the exchange of ERC20 tokens for native coins is weak.
 
 To give people more of an incentive, we might consider an interactive auction.
-The burn and snapshot approachs can be seen as auctions, where one unit of the ERC20 token buys exactly one share of the native coin. So if we want people to
+The burn and snapshot approaches can be seen as auctions, where one unit of the
+ERC20 token buys exactly one share of the native coin. So if we want people to
 abandon the old ERC20 token as quickly as possible, we might use a Reverse Dutch
 Auction, where the price per share never drops below one. That is, the
-multiplier starts of at e.g. 1.1 and decreases with time.
+multiplier starts off at e.g. 1.1 and decreases with time.
 (***TODO***: Dilution etc.)
 
